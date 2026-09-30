@@ -16,7 +16,7 @@ Cosmetic Kit Plus adds nothing by itself. Install a plugin that uses it, such as
 ## Install
 
 In the game: footer **plugins** > **browse** > Cosmetic Kit Plus > **install**. Plugins that need it install it (and
-Cosmetic Kit) for you. Needs the plugin manager host 0.18.0 or newer.
+Cosmetic Kit) for you. Needs the plugin manager host 0.19.0 or newer.
 
 ## Making arms
 
