@@ -5,8 +5,8 @@ cosmetics on top of [Cosmetic Kit](https://github.com/AnythingGoes-ballest/balle
 **arms**. Plugins add them; you pick them on the **Customize** page; it remembers what you wear.
 
 - Arms are worn with any ball and hat: pick a ball, pick a hat, and pick arms too.
-- Find them on the Customize page's **hats** tab in **local** mode, in the **arms** section. The first tile, **none**,
-  takes them off.
+- Find them on the Customize page's **arms** tab, after balls, hats and bfx. It shows in **local** mode (arms are worn
+  on your own ball only). The first tile, **none**, takes them off.
 - Like custom cosmetics, they're worn on your own ball only (the menu ball and the ball you race with).
 - What you wear is saved and put back the next time you start the game.
 

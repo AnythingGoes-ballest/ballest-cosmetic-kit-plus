@@ -3,8 +3,8 @@
 //
 //   arms    arms on the ball: a model (with the ball, kept upright, swinging or animated as the ball rolls)
 //
-// Each slot gets a section of its own on the Customize page's hats tab (in local mode, as custom cosmetics are only
-// ever worn on the player's own ball), with a "none" tile first. It remembers what the player wears in each slot and
+// Each slot gets a tab of its own on the Customize page, after balls, hats and bfx (in local mode, as custom cosmetics
+// are only ever worn on the player's own ball), with a "none" tile first. It remembers what the player wears in each slot and
 // puts it back on next launch.
 //
 // A plugin that adds them lists "cosmetic-kit-plus" in its [meta] dependencies and imports:
