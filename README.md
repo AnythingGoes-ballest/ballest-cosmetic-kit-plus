@@ -63,7 +63,10 @@ import bool AddBounce(const string &in, const string &in, const string &in) from
 `Cosmetics::EquippedExtra("bounce")` is your id, play it there: the game's own particle effects and sounds
 (`Draw::Effect`, `Draw::Sound`), shapes of your own (`Draw::Model`, moved with `Draw::Move`, `Draw::Turn` and
 `Draw::Scale`), and `Camera::Shake`. [Example Bounce](https://github.com/AnythingGoes-ballest/ballest-example-bounce)
-has ten, each soft, medium or hard by the hit.
+has eight, each soft, medium or hard by the hit.
+
+To show what an effect looks like when it's picked, play it under the menu ball: `Cosmetics::PreviewBall`
+gives the ball's middle and radius while the Customize page is shown (Example Bounce plays the medium version).
 
 ```angelscript
 void Main()
