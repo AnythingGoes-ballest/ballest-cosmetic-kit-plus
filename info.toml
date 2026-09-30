@@ -1,9 +1,9 @@
 [meta]
 name = "Cosmetic Kit Plus"
-version = "0.1.0"
+version = "0.2.0"
 author = "AnythingGoes"
-description = "Adds new kinds of cosmetics on top of Cosmetic Kit, starting with arms: plugins add them, you pick them on the Customize page, and it remembers what you wear."
-min_host = "0.19.0"
+description = "Adds new kinds of cosmetics on top of Cosmetic Kit, arms and bounce effects: plugins add them, you pick them on the Customize page, and it remembers what you wear."
+min_host = "0.20.0"
 dependencies = ["cosmetic-kit"]
 
 [script]

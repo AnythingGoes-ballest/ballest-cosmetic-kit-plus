@@ -2,6 +2,8 @@
 // three kinds (Cosmetic Kit adds custom ones of those); Cosmetic Kit Plus adds slots of its own, worn with them:
 //
 //   arms    arms on the ball: a model (with the ball, kept upright, swinging or animated as the ball rolls)
+//   bounce  an effect when the ball lands or hits a wall: the plugin that adds it plays it (Race::NextBounce tells it
+//           where and how hard; Draw::Effect, Draw::Model, Draw::Sound and Camera::Shake make it)
 //
 // Each slot gets a tab of its own on the Customize page, after balls, hats and bfx (in local mode, as custom cosmetics
 // are only ever worn on the player's own ball), with a "none" tile first. It remembers what the player wears in each slot and
@@ -10,6 +12,7 @@
 // A plugin that adds them lists "cosmetic-kit-plus" in its [meta] dependencies and imports:
 //
 //   import bool AddArms(const string &in, const string &in, const string &in, const string &in) from "cosmetic-kit-plus";
+//   import bool AddBounce(const string &in, const string &in, const string &in) from "cosmetic-kit-plus";
 //   import bool AddExtra(const string &in, const string &in, const string &in, const string &in, const string &in) from "cosmetic-kit-plus";
 //
 // AddArms(id, name, preview, model): an id starting with the adding plugin's id ("example-arms.buff"), the name on its
@@ -18,7 +21,12 @@
 // group to keep them upright and turned the way the ball goes, and give them swinging groups or an animation so they
 // move as the ball rolls (see Example Arms).
 //
-// AddExtra(slot, id, name, preview, model) is the same for any slot name (lowercase letters, digits, dashes, spaces).
+// AddBounce(id, name, preview): a bounce effect's tile. The adding plugin plays the effect: each frame it takes the
+// bounces (Race::NextBounce) and, while Cosmetics::EquippedExtra("bounce") is one of its ids, plays that one there,
+// soft to hard by the bounce's strength (see Example Bounce).
+//
+// AddExtra(slot, id, name, preview, model) is the same for any slot name (lowercase letters, digits, dashes, spaces);
+// model "" is a tile only.
 
 array<string> slots;              // the slots cosmetics have been added to
 array<string> saved;              // per slot: what Storage holds
@@ -27,6 +35,11 @@ array<string> restoring;          // per slot: worn last session, put back once 
 bool AddArms(const string &in id, const string &in name, const string &in preview, const string &in model)
 {
     return AddExtra("arms", id, name, preview, model);
+}
+
+bool AddBounce(const string &in id, const string &in name, const string &in preview)
+{
+    return AddExtra("bounce", id, name, preview, "");
 }
 
 bool AddExtra(const string &in slot, const string &in id, const string &in name, const string &in preview, const string &in model)
@@ -63,6 +76,7 @@ int Known(const string &in slot)
 void Main()
 {
     Known("arms");
+    Known("bounce");
 }
 
 // What the player wears is saved when it changes. While an extra from last session has not been added yet (its plugin
